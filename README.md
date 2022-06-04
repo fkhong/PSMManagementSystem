@@ -1,6 +1,9 @@
 # PSMManagementSystem
 Use the "master" branch to update
 
+run php artisan migrate to create table
+and register user yourself to continue
+
 
 Check these file before running
 
