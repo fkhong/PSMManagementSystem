@@ -1,5 +1,5 @@
 # PSMManagementSystem
-Look through README file before access
+Use the "master" branch to update
 
 
 Check these file before running
