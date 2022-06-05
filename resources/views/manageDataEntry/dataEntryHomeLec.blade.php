@@ -3,15 +3,15 @@
     
 
     <div class="mt-8 text-2xl">
-    Students' Data Entry Profile
+    Lecturers' Data Entry Profile
     </div>
 
     <div class="mt-6 text-gray-500">
     <div style="font-size : 25px">
 
 </div>
-    <a href="/addData"><button class="button">Add Data</button></a>&nbsp&nbsp&nbsp
-    <a href="/viewData"><button class="button">View Data</button></a>
+    <a href="/addLecData"><button class="button">Add Data</button></a>&nbsp&nbsp&nbsp
+    <a href="/viewLecData"><button class="button">View Data</button></a>
     
     </div>
     &nbsp&nbsp&nbsp

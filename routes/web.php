@@ -27,14 +27,17 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
 Route::resource('psmCalculation',\App\Http\Controllers\CalculationController::class);
 Route::resource('dataEntry',\App\Http\Controllers\DataController::class);
+Route::resource('dataEntryLec',\App\Http\Controllers\DataController::class);
+Route::resource('dataEntryCoo',\App\Http\Controllers\DataController::class);
 Route::resource('rubric',\App\Http\Controllers\RubricController::class);
 Route::resource('evaluationProcess',\App\Http\Controllers\EvaluationController::class);
 Route::resource('evaluationReminder',\App\Http\Controllers\ReminderController::class);
 Route::resource('report',\App\Http\Controllers\ReportController::class);
 
-
+//Kh Routes
 Route::get('/addSchedule','\App\Http\Controllers\CalculationController@addSchedule');
 Route::post('/addSchedule','App\Http\Controllers\CalculationController@storeSchedule' );
 Route::get('/viewSchedule','\App\Http\Controllers\CalculationController@viewSchedule');
@@ -42,3 +45,25 @@ Route::delete('/viewSchedule/{industrialEvaluationId}','\App\Http\Controllers\Ca
 Route::get('/editSchedule/{industrialEvaluationId}','\App\Http\Controllers\CalculationController@editSchedule');
 Route::post('/editSchedule','\App\Http\Controllers\CalculationController@updateSchedule');
 Route::get('/test','\App\Http\Controllers\CalculationController@test');
+
+//Mw Routes Student
+Route::get('/addData','\App\Http\Controllers\DataController@addData');
+Route::post('/addData','App\Http\Controllers\DataController@storeData' );
+Route::get('/viewData','\App\Http\Controllers\DataController@viewData');
+Route::get('/editData/{studentId}','\App\Http\Controllers\DataController@editData');
+Route::post('/editData','\App\Http\Controllers\DataController@updateData');
+Route::delete('/viewData/{studentId}','\App\Http\Controllers\DataController@deleteData');
+//Lecturer
+Route::get('/addLecData','\App\Http\Controllers\DataController@addLecData');
+Route::post('/addLecData','App\Http\Controllers\DataController@storeLecData' );
+Route::get('/viewLecData','\App\Http\Controllers\DataController@viewLecData');
+Route::get('/editLecData/{lecturerID}','\App\Http\Controllers\DataController@editLecData');
+Route::post('/editLecData','\App\Http\Controllers\DataController@updateLecData');
+Route::delete('/viewLecData/{lecturerID}','\App\Http\Controllers\DataController@deleteLecData');
+//Coordinator
+Route::get('/addCooData','\App\Http\Controllers\DataController@addCooData');
+Route::post('/addCooData','App\Http\Controllers\DataController@storeCooData' );
+Route::get('/viewCooData','\App\Http\Controllers\DataController@viewCooData');
+Route::get('/editCooData/{coordinatorID}','\App\Http\Controllers\DataController@editCooData');
+Route::post('/editCooData','\App\Http\Controllers\DataController@updateCooData');
+Route::delete('/viewCooData/{coordinatorID}','\App\Http\Controllers\DataController@deleteCooData');
