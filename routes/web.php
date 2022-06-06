@@ -67,3 +67,8 @@ Route::get('/viewCooData','\App\Http\Controllers\DataController@viewCooData');
 Route::get('/editCooData/{coordinatorID}','\App\Http\Controllers\DataController@editCooData');
 Route::post('/editCooData','\App\Http\Controllers\DataController@updateCooData');
 Route::delete('/viewCooData/{coordinatorID}','\App\Http\Controllers\DataController@deleteCooData');
+
+//report
+Route::get('/search','\App\Http\Controllers\ReportController@search');
+Route::get('/viewReport','\App\Http\Controllers\ReportController@viewReport');
+Route::get('/saveData/{studentId}','\App\Http\Controllers\ReportController@bookmark');

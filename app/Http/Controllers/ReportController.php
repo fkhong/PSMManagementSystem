@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Report; 
 
 class ReportController extends Controller
 {
@@ -32,9 +33,24 @@ class ReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function bookmark()
     {
-        //
+        
+        $studentId = Report::where ('studentId', '=', request('studentId'))->first();
+
+        if ($studentId == null){
+            $databm = new Report();
+            $databm-> studentId = request('studentId');
+            $databm-> studentName = request('studentName');
+            $databm-> fypTitle = request('fypTitle');
+            $databm-> courseName = request('courseName');
+            $databm-> stdContactNo = request('stdContactNo');
+            $databm-> stdEmail = request('stdEmail');
+            $databm-> supervisorName = request('supervisorName');
+
+            $databm-> save();
+            return redirect('manageReport/reportHome')->with('status', 'Bookmark Successfully');
+        }
     }
 
     /**
@@ -43,9 +59,10 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function viewReport()
     {
-        //
+        $data = Report::all();
+        return view('manageReport/viewReport',['items'=>$data]);
     }
 
     /**
@@ -80,5 +97,14 @@ class ReportController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search()
+    {
+        $search_text = $_GET['term'];
+        $data = Report::where('studentId', 'Like', '%' . $search_text . '%')-> get();
+        
+
+        return view('manageReport/viewReport', compact('data'));
     }
 }
