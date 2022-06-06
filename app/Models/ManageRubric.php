@@ -9,5 +9,5 @@ class ManageRubric extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'managerubric' ;
+    protected $table = 'manage_rubric' ;
 }
