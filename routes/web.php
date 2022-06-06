@@ -72,3 +72,9 @@ Route::delete('/viewCooData/{coordinatorID}','\App\Http\Controllers\DataControll
 Route::get('/search','\App\Http\Controllers\ReportController@search');
 Route::get('/viewReport','\App\Http\Controllers\ReportController@viewReport');
 Route::get('/saveData/{studentId}','\App\Http\Controllers\ReportController@bookmark');
+
+//Teo Rubric Routes
+Route::get('/addRubric','\App\Http\Controllers\RubricController@addRubric');
+Route::post('/addRubric','App\Http\Controllers\RubricController@storeRubric' );
+Route::get('/updateRubric/{rubricID}','\App\Http\Controllers\RubricController@updateRubric');
+Route::post('/updateRubric','\App\Http\Controllers\RubricController@editRubric'); 
