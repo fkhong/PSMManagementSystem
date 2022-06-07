@@ -3,82 +3,78 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\DataEntry; 
+use App\Models\DataEntryLec; 
+use App\Models\DataEntryCoo; 
 
 class EvaluationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('manageEvaluationProcess/evaluationProcessHome');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function addEvaluation()
     {
-        //
+        return view('manageEvaluationProcess/addEvaluation');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function storeEvaluation()
     {
-        //
+        $studentId = Evaluation::where ('studentId', '=', request('studentId'))->first();
+
+        if ($studentId == null){
+            $evaluation = new Evaluation();
+            $evaluation-> evaluationId = request('evaluationId');
+            $evaluation-> lecturerId = request('lecturerId');
+            $evaluation-> studentId = request('studentId');
+            $evaluation-> studentName = request('studentName');
+            $evaluation-> PSMTitle = request('PSMTitle');
+            $evaluation-> evaluationDate = request('evaluationDate');
+            $evaluation-> evaluationMark = request('evaluationMark');
+            $evaluation-> evaluationComment = request('evaluationComment');
+
+            $evaluation-> save();
+            return redirect('/viewEvaluation')->with('status', 'New Evaluation Form Added Successfully');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function viewEvaluation()
     {
-        //
+        $data = Evaluation::all();
+        return view('manageEvaluationProcess/viewEvaluation',['items'=>$data]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function editEvaluation($studentId)
     {
-        //
+        $evaluationData = Evaluation::select('*')->where('studentId', '=', $studentId)->first();
+        return view('manageEvaluationProcess/editEvaluation', ['items' => $evaluationData]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function updateEvaluation()
     {
-        //
+            $evaluationId = request('evaluationId');
+            $lecturerId = request('lecturerId');
+            $studentId = request('studentId');
+            $studentName = request('studentName');
+            $PSMTitle = request('PSMTitle');
+            $evaluationDate = request('evaluationDate');
+            $evaluationMark = request('evaluationMark');
+            $evaluationComment = request('evaluationComment');
+
+
+            Evaluation::where('studentId',$studentId)
+        ->update (['evaluationDate'=>$evaluationDate, 'evaluationMark'=>$evaluationMark, 'evaluationComment'=>$evaluationComment]);
+
+        return redirect('/viewEvaluation')->with('status', 'Evaluation Form Updated Successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function deleteEvaluation($studentId)
     {
-        //
-    }
+        $data = Evaluation::select('*')->where('studentId', '=', $studentId)->delete();
+        return redirect('/viewEvaluation')->with('status', 'Evaluation Form Deleted Successfully');
+    }  
 }
