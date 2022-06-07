@@ -1,9 +1,9 @@
 @extends('layouts.psmReport')
 @section('content')
-    
 
     <div class="mt-8 text-2xl">
     Search Report
+    <p class='status'>{{session('status')}}</p>
     
     </div>
 
@@ -19,19 +19,18 @@
         <div class="mx-auto pull-right">
             <div class="">
                 <form action="{{ url('/search') }}" method="GET" role="search">
-                    
-                        <input type="search" class="form-control mr-2" name="term" placeholder="Search ID" id="term" >
-                        
+                        <input type="search" class="form-control mr-2" name="term" placeholder="Search ID" id="term" required>
                         <button class="button" type="submit">Search</button>
-                        
                 </form>
+                
+                
             </div>
             
            
         </div>
     </div>
-    
-    
+
+
                 
         
 

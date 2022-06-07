@@ -35,22 +35,25 @@ class ReportController extends Controller
      */
     public function bookmark()
     {
-        
         $studentId = Report::where ('studentId', '=', request('studentId'))->first();
-
         if ($studentId == null){
-            $databm = new Report();
-            $databm-> studentId = request('studentId');
-            $databm-> studentName = request('studentName');
-            $databm-> fypTitle = request('fypTitle');
-            $databm-> courseName = request('courseName');
-            $databm-> stdContactNo = request('stdContactNo');
-            $databm-> stdEmail = request('stdEmail');
-            $databm-> supervisorName = request('supervisorName');
+            $data = new Report();
+            $data-> studentId = request('studentId');
+            $data-> studentName = request('studentName');
+            $data-> fypTitle = request('fypTitle');
+            $data-> courseName = request('courseName');
+            $data-> stdContactNo = request('stdContactNo');
+            $data-> stdEmail = request('stdEmail');
+            $data-> supervisorName = request('supervisorName');
 
-            $databm-> save();
-            return redirect('manageReport/reportHome')->with('status', 'Bookmark Successfully');
+            $data-> save();
+            //return view('manageReport/viewReport',['items'=>$data]);
+            //return view('manageReport/reportHome')->with('status', 'BookMarked Successfully');
+            //return redirect('manageReport/reportHome');
+            //return view('manageReport/bookmark')->with('status', 'BookMarked Successfully');
         }
+        return view('manageReport/reportHome')->with('status', 'BookMarked Successfully');
+        //return view('manageReport/bookmark')->with('status', 'BookMarked Successfully');
     }
 
     /**

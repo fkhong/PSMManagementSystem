@@ -41,8 +41,8 @@
                                 <td>{{ $item->stdEmail }}</td>
                                 <td>{{ $item->supervisorName }}</td>
                                 <td>
-                                    <a href="/saveData/{{ $item->studentId }}" class="btn" ><button type="button"
-                                            class="button3"> <i class="fas fa-cog fa-sm"></i>Bookmark
+                                    <a href="/saveData/{{ $item->studentId }}" class="btn" ><button type="button" class="button"> 
+                                        <i class="fas fa-cog fa-sm"></i>Bookmark
                                         </button>
                                     </a>
                                 </td>
