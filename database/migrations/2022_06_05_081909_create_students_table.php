@@ -21,10 +21,11 @@ return new class extends Migration
             $table->integer('stdContactNo'); 
             $table->string('stdEmail');
             $table->string('supervisorName');
+            $table->boolean('bookmark');
         });
 
         DB::table('students')->insert ([
-            ['studentID'=>'CB19053','studentName'=>'Foong KH','fypTitle'=>'MRS','courseName'=>'Software Engineering','stdContactNo'=>'01124162415','stdEmail'=>'foongkh@live.com','supervisorName'=>'Lecturer1']
+            ['studentID'=>'CB19053','studentName'=>'Foong KH','fypTitle'=>'MRS','courseName'=>'Software Engineering','stdContactNo'=>'01124162415','stdEmail'=>'foongkh@live.com','supervisorName'=>'Lecturer1','bookmark'=>false]
         ]);
     }
 

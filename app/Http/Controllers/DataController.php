@@ -35,6 +35,7 @@ class DataController extends Controller
             $dataEntry-> stdContactNo = request('stdContactNo');
             $dataEntry-> stdEmail = request('stdEmail');
             $dataEntry-> supervisorName = request('supervisorName');
+            $dataEntry-> bookmark = false;
 
             $dataEntry-> save();
             return redirect('/viewData')->with('status', 'Data Added Successfully');

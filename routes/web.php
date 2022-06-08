@@ -45,7 +45,7 @@ Route::delete('/viewSchedule/{industrialEvaluationId}','\App\Http\Controllers\Ca
 Route::get('/editSchedule/{industrialEvaluationId}','\App\Http\Controllers\CalculationController@editSchedule');
 Route::post('/editSchedule','\App\Http\Controllers\CalculationController@updateSchedule');
 Route::get('/test','\App\Http\Controllers\CalculationController@test');
-Route::get('/calculateTotal/{istudentId}','\App\Http\Controllers\CalculationController@calculateTotal');
+Route::get('/calculateTotal/{studentId}','\App\Http\Controllers\CalculationController@calculateTotal');
 
 //Manage Data Entry Routes (Min Wei)
 Route::get('/addData','\App\Http\Controllers\DataController@addData');
@@ -73,6 +73,8 @@ Route::delete('/viewCooData/{coordinatorID}','\App\Http\Controllers\DataControll
 Route::get('/search','\App\Http\Controllers\ReportController@search');
 Route::get('/viewReport','\App\Http\Controllers\ReportController@viewReport');
 Route::get('/saveData/{studentId}','\App\Http\Controllers\ReportController@bookmark');
+Route::get('/unbookmarked/{studentId}','\App\Http\Controllers\ReportController@unbookmarked');
+Route::get('/bookmarked/{studentId}','\App\Http\Controllers\ReportController@bookmark2');
 
 //Manage Rubric Routes (Teo)
 Route::get('/addRubric','\App\Http\Controllers\RubricController@addRubric');

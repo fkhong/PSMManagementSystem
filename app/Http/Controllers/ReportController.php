@@ -7,6 +7,22 @@ use App\Models\Report;
 
 class ReportController extends Controller
 {
+    public function unbookmarked($studentId) {
+        Report::where('studentId',$studentId)
+        ->update (['bookmark'=> false]);
+
+        $data = Report::where ('bookmark',  true)->get();
+        return view('manageReport/reportHome',['items'=>$data]);
+    }
+
+    public function bookmark2($studentId) {
+
+        Report::where('studentId',$studentId)
+        ->update (['bookmark'=> true]);
+
+        $data = Report::where ('bookmark',  true)->get();
+        return view('manageReport/reportHome',['items'=>$data]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +30,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return view('manageReport/reportHome');
+        $data = Report::where ('bookmark',  true)->get();
+        return view('manageReport/reportHome',['items'=>$data]);
+        
     }
 
     /**

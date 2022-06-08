@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\ManageRubric; 
+use App\Models\DataEntryCoo;
 
 class RubricController extends Controller
 {
     public function addRubric() {
-        return view('manageRubric/addRubric');
+        $data = DataEntryCoo::all();
+        return view('manageRubric/addRubric',compact('data'));
     }
 
     public function storeRubric() {
