@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\IndustrialEvaluation; 
 use App\Models\Evaluation; 
+use Illuminate\Support\Facades\Auth;
 
 class CalculationController extends Controller
 {
@@ -86,8 +87,15 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        $data = Evaluation::all()->sortByDesc('totalMarks');
+        $role = Auth::user()->role;
+        if ($role == '0') {
+            return view('errorAccess');
+            
+        }else {
+            
+            $data = Evaluation::all()->sortByDesc('totalMarks');
         return view('managePSMCalculation/psmCalculationHome',['items'=>$data]);
+        }
         
     }
 

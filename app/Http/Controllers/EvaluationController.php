@@ -8,13 +8,21 @@ use App\Models\DataEntry;
 use App\Models\DataEntryLec; 
 use App\Models\DataEntryCoo; 
 use App\Models\Evaluation; 
+use Illuminate\Support\Facades\Auth;
 
 class EvaluationController extends Controller
 {
 
     public function index()
     {
-        return view('manageEvaluationProcess/evaluationProcessHome');
+        $role = Auth::user()->role;
+        if ($role == '0') {
+            return view('errorAccess');
+        }else {
+            
+            return view('manageEvaluationProcess/evaluationProcessHome');
+        }
+        
     }
 
     public function addEvaluation()

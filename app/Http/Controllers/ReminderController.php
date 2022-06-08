@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReminderController extends Controller
 {
@@ -13,7 +14,14 @@ class ReminderController extends Controller
      */
     public function index()
     {
-        return view('manageEvaluationReminder/evaluationReminderHome');
+        $role = Auth::user()->role;
+        if ($role =='0') {
+            return view('errorAccess');
+        }else {
+            
+            return view('manageEvaluationReminder/evaluationReminderHome');
+        }
+        
     }
 
     /**

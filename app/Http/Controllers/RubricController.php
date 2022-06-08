@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\ManageRubric; 
 use App\Models\DataEntryCoo;
+use Illuminate\Support\Facades\Auth;
 
 class RubricController extends Controller
 {
@@ -58,8 +59,16 @@ class RubricController extends Controller
      */
     public function index()
     {
-        $data = ManageRubric::all();
-        return view('manageRubric/rubricHome',['items'=>$data]);
+        $role = Auth::user()->role;
+        if ($role == '0') {
+            return view('errorAccess');
+            
+        }
+        else {
+            $data = ManageRubric::all();
+            return view('manageRubric/rubricHome',['items'=>$data]);
+        }
+        
     }
 
     /**

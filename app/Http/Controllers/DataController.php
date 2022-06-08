@@ -7,13 +7,22 @@ use Carbon\Carbon;
 use App\Models\DataEntry; 
 use App\Models\DataEntryLec; 
 use App\Models\DataEntryCoo; 
+use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
 
     public function index()
     {
-        return view('manageDataEntry/dataEntryHome');
+        $role = Auth::user()->role;
+        if ($role == '0') {
+            return view('manageDataEntry/dataEntryHome');
+        }else if ($role =='1') {
+            return view('manageDataEntry/dataEntryHomeLec');
+        }else if ($role =='2') {
+            return view('manageDataEntry/dataEntryHomeCoo');
+        }
+        
     }
 
     //Student
