@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('coordinatorEmail'); 
             $table->string('expertise'); 
         });
+
+        DB::table('coordinators')->insert ([
+            ['coordinatorID'=>'C001','coordinatorName'=>'Coordinator1','coordinatorContactNo'=>'0123456789','coordinatorEmail'=>'coordinator@outlook.com','expertise'=>'Machine Learning']
+        ]);
     }
 
     /**

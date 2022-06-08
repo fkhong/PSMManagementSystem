@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\DataEntry; 
 use App\Models\DataEntryLec; 
 use App\Models\DataEntryCoo; 
+use App\Models\Evaluation; 
 
 class EvaluationController extends Controller
 {
@@ -18,7 +19,10 @@ class EvaluationController extends Controller
 
     public function addEvaluation()
     {
-        return view('manageEvaluationProcess/addEvaluation');
+        $studentDetails = DataEntry::all();
+        $lecturerDetails = DataEntryLec::all();
+       
+        return view('manageEvaluationProcess/addEvaluation',compact('studentDetails','lecturerDetails'));
     }
 
     public function storeEvaluation()
@@ -33,8 +37,10 @@ class EvaluationController extends Controller
             $evaluation-> studentName = request('studentName');
             $evaluation-> PSMTitle = request('PSMTitle');
             $evaluation-> evaluationDate = request('evaluationDate');
-            $evaluation-> evaluationMark = request('evaluationMark');
-            $evaluation-> evaluationComment = request('evaluationComment');
+            $evaluation-> marksByCoordinator = request('marksByCoordinator');
+            $evaluation-> marksBySupervisor = request('marksBySupervisor');
+            $evaluation-> evaluationComments = request('evaluationComments');
+            $evaluation-> totalMarks = 0.00;
 
             $evaluation-> save();
             return redirect('/viewEvaluation')->with('status', 'New Evaluation Form Added Successfully');
@@ -62,12 +68,13 @@ class EvaluationController extends Controller
             $studentName = request('studentName');
             $PSMTitle = request('PSMTitle');
             $evaluationDate = request('evaluationDate');
-            $evaluationMark = request('evaluationMark');
-            $evaluationComment = request('evaluationComment');
+            $marksByCoordinator = request('marksByCoordinator');
+            $marksBySupervisor = request('marksBySupervisor');
+            $evaluationComments = request('evaluationComments');
 
 
             Evaluation::where('studentId',$studentId)
-        ->update (['evaluationDate'=>$evaluationDate, 'evaluationMark'=>$evaluationMark, 'evaluationComment'=>$evaluationComment]);
+        ->update (['evaluationDate'=>$evaluationDate, 'marksByCoordinator'=>$marksByCoordinator, 'marksBySupervisor'=>$marksBySupervisor, 'evaluationComments'=>$evaluationComments]);
 
         return redirect('/viewEvaluation')->with('status', 'Evaluation Form Updated Successfully');
     }

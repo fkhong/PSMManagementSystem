@@ -22,6 +22,10 @@ return new class extends Migration
             $table->string('stdEmail');
             $table->string('supervisorName');
         });
+
+        DB::table('students')->insert ([
+            ['studentID'=>'CB19053','studentName'=>'Foong KH','fypTitle'=>'MRS','courseName'=>'Software Engineering','stdContactNo'=>'01124162415','stdEmail'=>'foongkh@live.com','supervisorName'=>'Lecturer1']
+        ]);
     }
 
     /**

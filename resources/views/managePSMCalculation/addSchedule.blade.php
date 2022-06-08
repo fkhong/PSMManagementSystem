@@ -30,9 +30,9 @@
     <label for="PSMTitle" class="block text-sm font-medium text-gray-700">PSM Title </label>
     <input type="text" name="PSMTitle" id="PSMTitle" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Title">&nbsp
     <label for="ieDate" class="block text-sm font-medium text-gray-700">Industrial Evaluation Date </label>
-    <input type="text" name="ieDate" id="ieDate" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="dd/MM/yy">&nbsp
+    <input type="date" name="ieDate" id="ieDate" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="dd/MM/yy">&nbsp
     <label for="ieTime" class="block text-sm font-medium text-gray-700">Industrial Evaluation Time </label>
-    <input type="text" name="ieTime" id="ieTime" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"style="height:40px;" placeholder="0000"><br>
+    <input type="time" name="ieTime" id="ieTime" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"style="height:40px;" placeholder="0000"><br>
     <input class="button" type="submit" value ="Save Schedule"style="height:47px;">
 </form>
 <br>

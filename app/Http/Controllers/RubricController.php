@@ -18,7 +18,7 @@ class RubricController extends Controller
         if ($rubricID == null){
             $manageRubric = new ManageRubric();
             $manageRubric-> rubricID = request('rubricID');
-            $manageRubric-> staffID = request('staffID');
+            $manageRubric-> coordinatorID = request('coordinatorID');
             $manageRubric-> rubricDetail = request('rubricDetail');
             $manageRubric-> rubricMark = request('rubricMark');
             $manageRubric-> rubricCategory = request('rubricCategory');
@@ -37,14 +37,14 @@ class RubricController extends Controller
     public function editRubric() {
         $rubricID = request('rubricID');
 
-        $staffID = request('staffID');
+        $coordinatorID = request('coordinatorID');
         $rubricDetail = request('rubricDetail');
         $rubricMark = request('rubricMark');
         $rubricCategory = request('rubricCategory');
         $rubricDate = request('rubricDate');
 
         ManageRubric::where('rubricID',$rubricID)
-        ->update (['staffID'=>$staffID, 'rubricDetail'=>$rubricDetail,'rubricMark'=>$rubricMark,'rubricCategory'=>$rubricCategory, 'rubricDate'=>$rubricDate]);
+        ->update (['coordinatorID'=>$coordinatorID, 'rubricDetail'=>$rubricDetail,'rubricMark'=>$rubricMark,'rubricCategory'=>$rubricCategory, 'rubricDate'=>$rubricDate]);
 
         return redirect('/rubric')->with('status', 'Rubric Updated Successfully');
     }

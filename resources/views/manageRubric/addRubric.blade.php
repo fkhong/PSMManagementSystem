@@ -23,8 +23,8 @@
         <label for="rubricID" class="block text-sm font-medium text-gray-700">Rubric ID</label>
         <input type="text" name="rubricID" id="rubricID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="PSM1001..."> &nbsp
 
-        <label for="staffID" class="block text-sm font-medium text-gray-700">Staff ID</label>
-        <input type="text" name="staffID" id="staffID" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S0001...">&nbsp
+        <label for="coordinatorID" class="block text-sm font-medium text-gray-700">Coordinator ID</label>
+        <input type="text" name="coordinatorID" id="coordinatorID" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S0001...">&nbsp
 
         <label for="rubricDetail" class="block text-sm font-medium text-gray-700">Rubric Detail </label>
         <input type="text" name="rubricDetail" id="rubricDetail" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Enter rubric detail...">&nbsp

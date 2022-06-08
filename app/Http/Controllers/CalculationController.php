@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\IndustrialEvaluation; 
+use App\Models\Evaluation; 
 
 class CalculationController extends Controller
 {
@@ -67,7 +68,9 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        return view('managePSMCalculation/psmCalculationHome');
+        $data = Evaluation::all();
+        return view('managePSMCalculation/psmCalculationHome',['items'=>$data]);
+        
     }
 
     /**

@@ -18,10 +18,60 @@
     
     
 
-    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-        <div class="p-6">
-        
-        </div> 
-    </div>
+    <table id="itemList" style="width:100%">
+                    <thead>
+
+                        <tr style="height:45px; " >
+                            <th>Evaluation ID</th>
+                            
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>PSM Title</th>
+                            <th>Evaluation Date</th>
+                            <th>Marks By Coordinator</th>
+                            <th>Marks By Supervisor</th>
+                            
+                            <th>Calculate Total Marks</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($items as $item)
+                            <tr style="height:60px; ">
+                                <td>{{ $item->evaluationId }}</td>
+                                
+                                <td>{{ $item->studentId }}</td>
+                                <td>{{ $item->studentName }}</td>
+                                <td>{{ $item->PSMTitle }}</td>
+                                <td>{{ $item->evaluationDate }}</td>
+                                <td>{{ $item->marksByCoordinator }}</td>
+                                <td>{{ $item->marksBySupervisor }}</td>
+                                
+                                <td>
+                                    <a href="/editEvaluation/{{ $item->studentId }}" class="btn"><button type="button"
+                                            class="button3"> <i class="fas fa-cog fa-sm"></i>Calculate
+                                        </button>
+                                    </a>
+                                </td>
+                              
+                            </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot style="display:none;">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+
+
+                </table>
+                <br>
 
 @endsection

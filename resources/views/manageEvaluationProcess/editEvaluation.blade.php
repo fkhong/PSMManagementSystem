@@ -37,11 +37,14 @@
     <label for="evaluationDate" class="block text-sm font-medium text-gray-700">Evaluation Date</label>
     <input type="date" name="evaluationDate" id="evaluationDate" class="block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->evaluationDate }}">&nbsp
 
-    <label for="evaluationMark" class="block text-sm font-medium text-gray-700">Evaluation Mark</label>
-    <input type="number" step="0.01" min="0.00" name="evaluationMark" id="evaluationMark" class="block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->evaluationMark }}">&nbsp
+    <label for="marksByCoordinator" class="block text-sm font-medium text-gray-700">Marks By Coordinator</label>
+    <input type="number" step="0.01" min="0.00" name="marksByCoordinator" id="marksByCoordinator" class="block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->marksByCoordinator }}">&nbsp
+    
+    <label for="marksBySupervisor" class="block text-sm font-medium text-gray-700">Marks By Supervisor</label>
+    <input type="number" step="0.01" min="0.00" name="marksBySupervisor" id="marksBySupervisor" class="block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->marksBySupervisor }}">&nbsp
 
-    <label for="evaluationComment" class="block text-sm font-medium text-gray-700">Comment</label>
-    <input type="text" name="evaluationComment" id="evaluationComment" class="block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->evaluationComment }}"><br>
+    <label for="evaluationComments" class="block text-sm font-medium text-gray-700">Comment</label>
+    <input type="text" name="evaluationComments" id="evaluationComments" class="block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->evaluationComment }}"><br>
     
     <button class="button" type="submit" style="height:47px;">Update</button>
 </form>

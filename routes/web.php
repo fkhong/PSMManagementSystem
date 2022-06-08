@@ -37,7 +37,7 @@ Route::resource('evaluationProcess',\App\Http\Controllers\EvaluationController::
 Route::resource('evaluationReminder',\App\Http\Controllers\ReminderController::class);
 Route::resource('report',\App\Http\Controllers\ReportController::class);
 
-//Kh Routes
+//Manage Calculations Routes (Kin Hong)
 Route::get('/addSchedule','\App\Http\Controllers\CalculationController@addSchedule');
 Route::post('/addSchedule','App\Http\Controllers\CalculationController@storeSchedule' );
 Route::get('/viewSchedule','\App\Http\Controllers\CalculationController@viewSchedule');
@@ -46,7 +46,7 @@ Route::get('/editSchedule/{industrialEvaluationId}','\App\Http\Controllers\Calcu
 Route::post('/editSchedule','\App\Http\Controllers\CalculationController@updateSchedule');
 Route::get('/test','\App\Http\Controllers\CalculationController@test');
 
-//Mw Routes Student
+//Manage Data Entry Routes (Min Wei)
 Route::get('/addData','\App\Http\Controllers\DataController@addData');
 Route::post('/addData','App\Http\Controllers\DataController@storeData' );
 Route::get('/viewData','\App\Http\Controllers\DataController@viewData');
@@ -68,13 +68,21 @@ Route::get('/editCooData/{coordinatorID}','\App\Http\Controllers\DataController@
 Route::post('/editCooData','\App\Http\Controllers\DataController@updateCooData');
 Route::delete('/viewCooData/{coordinatorID}','\App\Http\Controllers\DataController@deleteCooData');
 
-//report
+//Manage Report Routes (Jimmy)
 Route::get('/search','\App\Http\Controllers\ReportController@search');
 Route::get('/viewReport','\App\Http\Controllers\ReportController@viewReport');
 Route::get('/saveData/{studentId}','\App\Http\Controllers\ReportController@bookmark');
 
-//Teo Rubric Routes
+//Manage Rubric Routes (Teo)
 Route::get('/addRubric','\App\Http\Controllers\RubricController@addRubric');
 Route::post('/addRubric','App\Http\Controllers\RubricController@storeRubric' );
 Route::get('/updateRubric/{rubricID}','\App\Http\Controllers\RubricController@updateRubric');
 Route::post('/updateRubric','\App\Http\Controllers\RubricController@editRubric'); 
+
+//Manage Evaluation Process Routes (Brenda)
+Route::get('/addEvaluation','\App\Http\Controllers\EvaluationController@addEvaluation');
+Route::post('/addEvaluation','App\Http\Controllers\EvaluationController@storeEvaluation' );
+Route::get('/viewEvaluation','\App\Http\Controllers\EvaluationController@viewEvaluation');
+Route::delete('/viewEvaluation/{studentId}','\App\Http\Controllers\EvaluationController@deleteEvaluation');
+Route::get('/editEvaluation/{studentId}','\App\Http\Controllers\EvaluationController@editEvaluation');
+Route::post('/editEvaluation','\App\Http\Controllers\EvaluationController@updateEvaluation');

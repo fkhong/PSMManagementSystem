@@ -4,7 +4,7 @@
 
     <div class="mt-8 text-2xl">
     View Evaluation
-    <a href="/psmEvaluation"><button class="button4" >Back</button></a>
+    <a href="/evaluationProcess"><button class="button4" >Back</button></a>
     </div>
 
     <div class="mt-6 text-gray-500">
@@ -25,7 +25,8 @@
                             <th>Student Name</th>
                             <th>PSM Title</th>
                             <th>Evaluation Date</th>
-                            <th>Evaluation Mark</th>
+                            <th>Marks By Coordinator</th>
+                            <th>Marks By Supervisor</th>
                             <th>Comment</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -40,10 +41,11 @@
                                 <td>{{ $item->studentName }}</td>
                                 <td>{{ $item->PSMTitle }}</td>
                                 <td>{{ $item->evaluationDate }}</td>
-                                <td>{{ $item->evaluationMark }}</td>
-                                <td>{{ $item->evaluationComment }}</td>
+                                <td>{{ $item->marksByCoordinator }}</td>
+                                <td>{{ $item->marksBySupervisor }}</td>
+                                <td>{{ $item->evaluationComments }}</td>
                                 <td>
-                                    <a href="/editEvaluation/{{ $item->evaluationId }}" class="btn"><button type="button"
+                                    <a href="/editEvaluation/{{ $item->studentId }}" class="btn"><button type="button"
                                             class="button3"> <i class="fas fa-cog fa-sm"></i>Edit
                                         </button>
                                     </a>
@@ -51,7 +53,7 @@
                                 <td>
                                     <div >  
 
-                                        <form action="/viewEvaluation/{{ $item->evaluationId }}" method="POST"
+                                        <form action="/viewEvaluation/{{ $item->studentId }}" method="POST"
                                             onsubmit="return confirm('Do you really want to delete?');">
 
                                             @csrf

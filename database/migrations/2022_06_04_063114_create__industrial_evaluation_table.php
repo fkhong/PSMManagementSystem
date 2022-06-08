@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('studentId');
             $table->string('studentName');
             $table->string('PSMTitle');
-            $table->string('ieDate');
-            $table->string('ieTime');
+            $table->date('ieDate');
+            $table->time('ieTime');
         });
 
         DB::table('industrialEvaluation')->insert ([
-            ['industrialEvaluationId'=>'IE001','studentId'=>'S001','studentName'=>'Foong','PSMTitle'=>'Music Recommender System','ieDate'=>'12/06/2022','ieTime'=>'1330']
+            ['industrialEvaluationId'=>'IE001','studentId'=>'CB19053','studentName'=>'Foong KH','PSMTitle'=>'Music Recommender System','ieDate'=>'2022-06-12','ieTime'=>'13:30']
         ]);
     }
 

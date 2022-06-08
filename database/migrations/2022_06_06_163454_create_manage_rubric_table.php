@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('manage_rubric', function (Blueprint $table) {
             $table->string('rubricID'); 
-            $table->string('staffID'); 
+            $table->string('coordinatorID'); 
             $table->string('rubricDetail');
             $table->float('rubricMark'); 
             $table->string('rubricCategory'); 
             $table->date('rubricDate'); 
         });
+
+        DB::table('manage_rubric')->insert ([
+            ['rubricID'=>'R001','coordinatorID'=>'C001','rubricDetail'=>'Null','rubricMark'=>'40.0','rubricCategory'=>'PSM1','rubricDate'=>'2022-06-06']
+        ]);
     }
 
     /**

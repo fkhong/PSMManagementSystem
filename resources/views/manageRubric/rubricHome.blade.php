@@ -28,7 +28,7 @@
 
                         <tr style="height:45px; " >
                             <th>Rubric ID</th>
-                            <th>Staff ID</th>
+                            <th>Coordinator ID</th>
                             <th>Rubric Detail</th>
                             <th>Rubric Mark</th>
                             <th>Rubric Category</th>
@@ -40,7 +40,7 @@
                         @foreach ($items as $item)
                             <tr style="height:60px; ">
                                 <td>{{ $item->rubricID }}</td>
-                                <td>{{ $item->staffID }}</td>
+                                <td>{{ $item->coordinatorID }}</td>
                                 <td>{{ $item->rubricDetail }}</td>
                                 <td>{{ $item->rubricMark }}</td>
                                 <td>{{ $item->rubricCategory }}</td>
