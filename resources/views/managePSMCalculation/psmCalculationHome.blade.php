@@ -14,8 +14,8 @@
     <a href="/viewSchedule"><button class="button">View Schedule</button></a>
     
     </div>
-    &nbsp&nbsp&nbsp
     
+    <br><br>
     
 
     <table id="itemList" style="width:100%">

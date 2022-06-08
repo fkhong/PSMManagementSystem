@@ -1,4 +1,4 @@
-@extends('layouts.psmCalculation')
+@extends('layouts.psmRubric')
 @section('content')
     
 
@@ -21,7 +21,7 @@
     <form action="/addRubric" method="POST">
     @csrf
         <label for="rubricID" class="block text-sm font-medium text-gray-700">Rubric ID</label>
-        <input type="text" name="rubricID" id="rubricID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="PSM1001..."> &nbsp
+        <input type="text" name="rubricID" id="rubricID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="PSM1001..."required> &nbsp
 
         <label for="coordinatorID" class="block text-sm font-medium text-gray-700">Coordinator ID</label>
         <!--<input type="text" name="coordinatorID" id="coordinatorID" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S0001...">&nbsp
@@ -33,10 +33,10 @@
             @endforeach
       </select><br>
         <label for="rubricDetail" class="block text-sm font-medium text-gray-700">Rubric Detail </label>
-        <input type="text" name="rubricDetail" id="rubricDetail" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Enter rubric detail...">&nbsp
+        <input type="text" name="rubricDetail" id="rubricDetail" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Enter rubric detail..."required>&nbsp
 
         <label for="rubricMark" class="block text-sm font-medium text-gray-700">Rubric Mark </label>
-        <input type="number" step="0.01" min="0.00" name="rubricMark" id="rubricMark" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="25.50...">&nbsp
+        <input type="number" step="0.01" min="0.00" name="rubricMark" id="rubricMark" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="25.50..."required>&nbsp
 
         <label for="rubricCategory" class="block text-sm font-medium text-gray-700">Rubric Category </label>
         <select name="rubricCategory" id="rubricCategory" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;">
@@ -47,7 +47,7 @@
         </select>&nbsp
 
         <label for="rubricDate" class="block text-sm font-medium text-gray-700">Rubric Date </label>
-        <input type="date" name="rubricDate" id="rubricDate" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"style="height:40px;"><br>
+        <input type="date" name="rubricDate" id="rubricDate" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"style="height:40px;"required><br>
 
         <input class="button" type="submit" value ="Add Rubric"style="height:47px;">
     </form>

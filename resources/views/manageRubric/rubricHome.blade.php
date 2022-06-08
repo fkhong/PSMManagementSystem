@@ -1,4 +1,4 @@
-@extends('layouts.psmCalculation')
+@extends('layouts.psmRubric')
 @section('content')
     
 

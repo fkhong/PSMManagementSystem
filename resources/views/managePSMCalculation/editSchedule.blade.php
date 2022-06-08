@@ -27,9 +27,9 @@
     <label for="PSMTitle" class="block text-sm font-medium text-gray-700">PSM Title </label>
     <input type="text" name="PSMTitle" id="PSMTitle" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->PSMTitle }}" readonly>&nbsp
     <label for="ieDate" class="block text-sm font-medium text-gray-700">Industrial Evaluation Date </label>
-    <input type="text" name="ieDate" id="ieDate" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->ieDate }}">&nbsp
+    <input type="text" name="ieDate" id="ieDate" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->ieDate }}"required>&nbsp
     <label for="ieTime" class="block text-sm font-medium text-gray-700">Industrial Evaluation Time </label>
-    <input type="text" name="ieTime" id="ieTime" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->ieTime }}"><br>
+    <input type="text" name="ieTime" id="ieTime" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->ieTime }}"required><br>
     <button class="button" type="submit" style="height:47px;">Update Schedule</button>
 </form>
     

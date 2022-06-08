@@ -22,19 +22,19 @@
   <form action="/addCooData" method="POST">
   @csrf
     <label for="coordinatorID" class="block text-sm font-medium text-gray-700">Coordinator ID</label>
-    <input type="text" name="coordinatorID" id="coordinatorID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="SA00001"> &nbsp
+    <input type="text" name="coordinatorID" id="coordinatorID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="SA00001"required> &nbsp
     
     <label for="coordinatorName" class="block text-sm font-medium text-gray-700">Coordinator Name</label>
-    <input type="text" name="coordinatorName" id="coordinatorName" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Chin">&nbsp
+    <input type="text" name="coordinatorName" id="coordinatorName" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Chin"required>&nbsp
     
     <label for="coordinatorContactNo" class="block text-sm font-medium text-gray-700">Coordinator Contact No. </label>
-    <input type="text" name="coordinatorContactNo" id="coordinatorContactNo" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="0101741111">&nbsp
+    <input type="text" name="coordinatorContactNo" id="coordinatorContactNo" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="0101741111"required>&nbsp
     
     <label for="coordinatorEmail" class="block text-sm font-medium text-gray-700">Coordinator Email Address </label>
-    <input type="text" name="coordinatorEmail" id="coordinatorEmail" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="chin@gmail.com">&nbsp
+    <input type="text" name="coordinatorEmail" id="coordinatorEmail" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="chin@gmail.com"required>&nbsp
     
     <label for="expertise" class="block text-sm font-medium text-gray-700">Expertise </label>
-    <input type="text" name="expertise" id="expertise" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="AI"><br>
+    <input type="text" name="expertise" id="expertise" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="AI"required><br>
     
     <input class="button" type="submit" value ="Save Coordinator Data"style="height:47px;">
 </form>

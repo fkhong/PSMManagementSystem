@@ -1,4 +1,4 @@
-@extends('layouts.psmCalculation')
+@extends('layouts.psmReminder')
 @section('content')
     
 
