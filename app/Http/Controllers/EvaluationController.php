@@ -19,7 +19,8 @@ class EvaluationController extends Controller
 
     public function addEvaluation()
     {
-        $studentDetails = DataEntry::all();
+        $evaluationDetails = Evaluation::select('studentId')->get();
+        $studentDetails = DataEntry::whereNotIn('studentId',$evaluationDetails)->get();
         $lecturerDetails = DataEntryLec::all();
        
         return view('manageEvaluationProcess/addEvaluation',compact('studentDetails','lecturerDetails'));
@@ -40,11 +41,17 @@ class EvaluationController extends Controller
             $evaluation-> marksByCoordinator = request('marksByCoordinator');
             $evaluation-> marksBySupervisor = request('marksBySupervisor');
             $evaluation-> evaluationComments = request('evaluationComments');
-            $evaluation-> totalMarks = 0.00;
+            $evaluation-> totalMarks = 0.0;
 
             $evaluation-> save();
+
             return redirect('/viewEvaluation')->with('status', 'New Evaluation Form Added Successfully');
+            
+        }else {
+            return redirect('/viewEvaluation')->with('status', 'Student exists!');
+
         }
+
     }
 
     public function viewEvaluation()
@@ -74,7 +81,7 @@ class EvaluationController extends Controller
 
 
             Evaluation::where('studentId',$studentId)
-        ->update (['evaluationDate'=>$evaluationDate, 'marksByCoordinator'=>$marksByCoordinator, 'marksBySupervisor'=>$marksBySupervisor, 'evaluationComments'=>$evaluationComments]);
+        ->update (['evaluationDate'=>$evaluationDate, 'marksByCoordinator'=>$marksByCoordinator, 'marksBySupervisor'=>$marksBySupervisor, 'evaluationComments'=>$evaluationComments,'totalMarks'=>($marksBySupervisor+$marksByCoordinator)]);
 
         return redirect('/viewEvaluation')->with('status', 'Evaluation Form Updated Successfully');
     }

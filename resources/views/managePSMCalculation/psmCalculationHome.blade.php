@@ -30,6 +30,7 @@
                             <th>Evaluation Date</th>
                             <th>Marks By Coordinator</th>
                             <th>Marks By Supervisor</th>
+                            <th>Total Marks</th>
                             
                             <th>Calculate Total Marks</th>
                             
@@ -46,12 +47,14 @@
                                 <td>{{ $item->evaluationDate }}</td>
                                 <td>{{ $item->marksByCoordinator }}</td>
                                 <td>{{ $item->marksBySupervisor }}</td>
+                                <td>{{ $item->totalMarks }}</td>
                                 
                                 <td>
-                                    <a href="/editEvaluation/{{ $item->studentId }}" class="btn"><button type="button"
+                                    <a href="/calculateTotal/{{ $item->studentId }}" class="btn"><button type="button"
                                             class="button3"> <i class="fas fa-cog fa-sm"></i>Calculate
                                         </button>
                                     </a>
+                                    
                                 </td>
                               
                             </tr>

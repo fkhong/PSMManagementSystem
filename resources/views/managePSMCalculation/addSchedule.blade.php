@@ -24,11 +24,34 @@
   <label for="industrialEvaluationId" class="block text-sm font-medium text-gray-700">Industrial Evaluation ID</label>
     <input type="text" name="industrialEvaluationId" id="industrialEvaluationId" class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="IE000"> &nbsp
     <label for="studentId" class="block text-sm font-medium text-gray-700">Student ID</label>
-    <input type="text" name="studentId" id="studentId" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S000">&nbsp
+    <!--<input type="text" name="studentId" id="studentId" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S000">&nbsp
+-->
+    <select name="studentId" id = "studentId" placeholder="studentId" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;">
+            @foreach ($data as $data2)
+        <option name="studentId" value="{{$data2 -> studentId}}">{{$data2 -> studentId}}  {{$data2 -> studentName}}</option>
+            @endforeach
+      </select><br>
+    
     <label for="studentName" class="block text-sm font-medium text-gray-700">Student Name </label>
-    <input type="text" name="studentName" id="studentName" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Foong KH">&nbsp
+    <!--<input type="text" name="studentName" id="studentName" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Foong KH">&nbsp
+-->
+    <select name="studentName" id = "studentName" placeholder="studentName" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;">
+            @foreach ($data as $data2)
+        <option name="studentName" value="{{$data2 -> studentName}}">{{$data2 -> studentId}}  {{$data2 -> studentName}}</option>
+            @endforeach
+      </select><br>
+
+
     <label for="PSMTitle" class="block text-sm font-medium text-gray-700">PSM Title </label>
-    <input type="text" name="PSMTitle" id="PSMTitle" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Title">&nbsp
+    <!--<input type="text" name="PSMTitle" id="PSMTitle" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="Title">&nbsp
+-->
+    <select name="PSMTitle" id = "PSMTitle" placeholder="PSMTitle" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;">
+            @foreach ($data as $data2)
+        <option name="PSMTitle" value="{{$data2 -> PSMTitle}}">{{$data2 -> studentId}}  {{$data2 -> PSMTitle}}</option>
+            @endforeach
+      </select><br>
+
+    
     <label for="ieDate" class="block text-sm font-medium text-gray-700">Industrial Evaluation Date </label>
     <input type="date" name="ieDate" id="ieDate" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="dd/MM/yy">&nbsp
     <label for="ieTime" class="block text-sm font-medium text-gray-700">Industrial Evaluation Time </label>

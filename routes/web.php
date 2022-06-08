@@ -45,6 +45,7 @@ Route::delete('/viewSchedule/{industrialEvaluationId}','\App\Http\Controllers\Ca
 Route::get('/editSchedule/{industrialEvaluationId}','\App\Http\Controllers\CalculationController@editSchedule');
 Route::post('/editSchedule','\App\Http\Controllers\CalculationController@updateSchedule');
 Route::get('/test','\App\Http\Controllers\CalculationController@test');
+Route::get('/calculateTotal/{istudentId}','\App\Http\Controllers\CalculationController@calculateTotal');
 
 //Manage Data Entry Routes (Min Wei)
 Route::get('/addData','\App\Http\Controllers\DataController@addData');

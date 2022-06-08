@@ -14,6 +14,18 @@ class CalculationController extends Controller
         return view('managePSMCalculation/test');
     }
 
+    public function calculateTotal($studentId) {
+        
+        $marksByCoordinator = Evaluation::where('studentId', '=', $studentId)->value('marksByCoordinator');
+        $marksBySupervisor = Evaluation::where('studentId', '=', $studentId)->value('marksBySupervisor');
+
+        Evaluation::where('studentId',$studentId)
+        ->update (['totalMarks'=>($marksByCoordinator + $marksBySupervisor)]);
+
+        $data = Evaluation::all()->sortByDesc('totalMarks');
+        return view('managePSMCalculation/psmCalculationHome',['items'=>$data]);
+    }
+
     public function updateSchedule() {
         $industrialEvaluationId = request('industrialEvaluationId');
         
@@ -37,7 +49,13 @@ class CalculationController extends Controller
     }
 
     public function addSchedule() {
-        return view('managePSMCalculation/addSchedule');
+
+        
+
+        $industrialEvaluation = IndustrialEvaluation::select('studentId')->get();
+        $data = Evaluation::whereNotIn('studentId',$industrialEvaluation)->get()->sortByDesc('totalMarks')->take(20);
+        
+        return view('managePSMCalculation/addSchedule',compact('data'));
     }
 
     public function storeSchedule() {
@@ -68,7 +86,7 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        $data = Evaluation::all();
+        $data = Evaluation::all()->sortByDesc('totalMarks');
         return view('managePSMCalculation/psmCalculationHome',['items'=>$data]);
         
     }
