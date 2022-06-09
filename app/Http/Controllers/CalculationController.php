@@ -89,9 +89,13 @@ class CalculationController extends Controller
     {
         $role = Auth::user()->role;
         if ($role == '0') {
-            return view('errorAccess');
+            return view('errorAccessStudent');
             
-        }else {
+        }else if ($role == '1') {
+            return view('errorAccessLecturer');
+        }
+        else 
+        {
             
             $data = Evaluation::all()->sortByDesc('totalMarks');
         return view('managePSMCalculation/psmCalculationHome',['items'=>$data]);

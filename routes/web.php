@@ -27,7 +27,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('redirects','App\Http\Controllers\HomeController@index');
+
 
 Route::resource('psmCalculation',\App\Http\Controllers\CalculationController::class);
 Route::resource('dataEntry',\App\Http\Controllers\DataController::class);

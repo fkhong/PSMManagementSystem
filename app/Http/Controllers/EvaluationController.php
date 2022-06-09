@@ -17,7 +17,7 @@ class EvaluationController extends Controller
     {
         $role = Auth::user()->role;
         if ($role == '0') {
-            return view('errorAccess');
+            return view('errorAccessStudent');
         }else {
             
             return view('manageEvaluationProcess/evaluationProcessHome');
