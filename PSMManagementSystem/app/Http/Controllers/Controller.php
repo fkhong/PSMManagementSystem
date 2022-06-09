@@ -27,8 +27,8 @@ class ReminderController extends Controller
            $evaluationReminder-> staffID = requast ('staffID');
            $evaluationReminder-> evaluationPhase = requast ('evaluationPhase');
            $evaluationReminder-> staffPosition = requast ('staffPosition');
-           $evaluationReminder-> ieDate = requast ('ieDate');
-           $evaluationReminder-> ieTime = requast ('ieTime');
+           $evaluationReminder-> ieDate = requast ('reminderDate');
+           $evaluationReminder-> ieTime = requast ('reminderTime');
 
            $evaluationReminder->save();
            return redirect('/reminderList')->with('status','Successfully save reminder');
