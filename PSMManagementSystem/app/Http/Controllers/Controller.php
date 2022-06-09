@@ -15,6 +15,10 @@ class ReminderController extends Controller
    }
 
    public function reminderForm(){
+
+        $evaluationReminder = evaluationReminder::select('staffID')->get();
+        $data = evaluationReminder::whereNotIn('staffID',$evaluationReminder)->get()->sortByAssc('reminderForm')->take (50);
+
        $staffID = evaluationReminder::where ('staffID','='requast('staffID'))->first();
 
        if ($staffID == null){
@@ -39,6 +43,15 @@ class ReminderController extends Controller
         return view ('manageReminder/reminderList',['items'=>$data]);
    }
    {
-   public function  
+   public function reminderEdit(){
+       $reminder_edit = evaluationReminder::select('*')->where('reminderID','=',$reminderID)->first();
+        return view('manageReminder/reminderEdit'),['items'=>$reminder_edit]);
+
+    } 
+   }
+   public function reminderDelete(){
+       $data = evaluationReminder::select('*')->where('reminderID','=',$reminderID)->delete();
+       return redirect('/reminderList')->with('status','Successfully delete reminder');
+
    }
 }
