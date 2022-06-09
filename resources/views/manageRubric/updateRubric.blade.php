@@ -20,13 +20,13 @@
     <input type="text" name="rubricID" id="rubricID" class=" block w-full border-gray-300 rounded-md" style="height:40px;" value="{{ $items->rubricID }}" readonly> &nbsp
 
     <label for="coordinatorID" class="block text-sm font-medium text-gray-700">Coordinator ID</label>
-    <input type="text" name="coordinatorID" id="coordinatorID" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->coordinatorID }}"required>&nbsp
+    <input type="text" name="coordinatorID" id="coordinatorID" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->coordinatorID }}"required>&nbsp
 
     <label for="rubricDetail" class="block text-sm font-medium text-gray-700">Rubric Detail </label>
-    <input type="text" name="rubricDetail" id="rubricDetail" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->rubricDetail }}"required>&nbsp
+    <input type="text" name="rubricDetail" id="rubricDetail" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->rubricDetail }}"required>&nbsp
 
     <label for="rubricMark" class="block text-sm font-medium text-gray-700">Rubric Mark </label>
-    <input type="number" step="0.01" min="0.00" name="rubricMark" id="rubricMark" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->rubricMark }}"required>&nbsp
+    <input type="number" step="0.01" min="0.00" name="rubricMark" id="rubricMark" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->rubricMark }}"required>&nbsp
 
     <label for="rubricCategory" class="block text-sm font-medium text-gray-700">Rubric Category </label>
     <select name="rubricCategory" id="rubricCategory" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;">

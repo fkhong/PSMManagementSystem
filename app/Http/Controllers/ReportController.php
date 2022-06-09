@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report; 
+use App\Models\Evaluation; 
+use App\Models\IndustrialEvaluation; 
 
 class ReportController extends Controller
 {
@@ -124,8 +126,9 @@ class ReportController extends Controller
     {
         $search_text = $_GET['term'];
         $data = Report::where('studentId', 'Like', '%' . $search_text . '%')-> get();
-        
+        $edata = Evaluation::where('studentId', 'Like', '%' . $search_text . '%')-> get();
+        $iedata = IndustrialEvaluation::where('studentId', 'Like', '%' . $search_text . '%')-> get();
 
-        return view('manageReport/viewReport', compact('data'));
+        return view('manageReport/viewReport', compact('data','edata','iedata'));
     }
 }

@@ -25,13 +25,13 @@
     <input type="text" name="lecturerName" id="lecturerName" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->lecturerName }}" readonly>&nbsp
     
     <label for="lecturerContactNo" class="block text-sm font-medium text-gray-700">Lecturer Contact No. </label>
-    <input type="text" name="lecturerContactNo" id="lecturerContactNo" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->lecturerContactNo }}"required><br>
+    <input type="text" name="lecturerContactNo" id="lecturerContactNo" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->lecturerContactNo }}"required><br>
 
     <label for="lecturerEmail" class="block text-sm font-medium text-gray-700">Lecturer Email Address </label>
-    <input type="text" name="lecturerEmail" id="lecturerEmail" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->lecturerEmail }}"required><br>
+    <input type="text" name="lecturerEmail" id="lecturerEmail" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->lecturerEmail }}"required><br>
 
     <label for="superviseeName" class="block text-sm font-medium text-gray-700">Supervisee Name </label>
-    <input type="text" name="superviseeName" id="superviseeName" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->superviseeName }}"required><br>
+    <input type="text" name="superviseeName" id="superviseeName" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->superviseeName }}"required><br>
     
     <button class="button" type="submit" style="height:47px;">Update Data</button>
 </form>

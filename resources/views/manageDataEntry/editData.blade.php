@@ -25,19 +25,19 @@
     <input type="text" name="studentName" id="studentName" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->studentName }}" readonly>&nbsp
     
     <label for="fypTitle" class="block text-sm font-medium text-gray-700">FYP Title </label>
-    <input type="text" name="fypTitle" id="fypTitle" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->fypTitle }}"required>&nbsp
+    <input type="text" name="fypTitle" id="fypTitle" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->fypTitle }}"required>&nbsp
     
     <label for="courseName" class="block text-sm font-medium text-gray-700">Course Name </label>
-    <input type="text" name="courseName" id="courseName" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items->courseName }}"required>&nbsp
+    <input type="text" name="courseName" id="courseName" class=" block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items->courseName }}"required>&nbsp
     
     <label for="stdContactNo" class="block text-sm font-medium text-gray-700">Student Contact No. </label>
-    <input type="text" name="stdContactNo" id="stdContactNo" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->stdContactNo }}"required><br>
+    <input type="text" name="stdContactNo" id="stdContactNo" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->stdContactNo }}"required><br>
 
     <label for="stdEmail" class="block text-sm font-medium text-gray-700">Student Email Address </label>
-    <input type="text" name="stdEmail" id="stdEmail" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->stdEmail }}"required><br>
+    <input type="text" name="stdEmail" id="stdEmail" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->stdEmail }}"required><br>
 
     <label for="supervisorName" class="block text-sm font-medium text-gray-700">Supervisor Name </label>
-    <input type="text" name="supervisorName" id="supervisorName" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->supervisorName }}"required><br>
+    <input type="text" name="supervisorName" id="supervisorName" class=" block w-full  border-gray-300 rounded-md"style="height:40px;" value="{{ $items->supervisorName }}"required><br>
     
     <button class="button" type="submit" style="height:47px;">Update Data</button>
 </form>
