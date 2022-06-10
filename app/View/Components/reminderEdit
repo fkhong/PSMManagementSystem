@@ -10,8 +10,8 @@
     <div class="mt-6 text-gray-500">
     
     </div>  
-    
-    @php
+
+
         echo '<form action="/reminderEdit" method="POST" onsubmit="return confirm(\'Edit Reminder?\');">';
     @endphp
     @csrf
