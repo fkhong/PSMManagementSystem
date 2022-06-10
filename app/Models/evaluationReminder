@@ -11,4 +11,5 @@ class evaluationReminder extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'reminderID';
+    
 }

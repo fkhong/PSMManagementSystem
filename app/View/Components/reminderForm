@@ -1,0 +1,48 @@
+@@ -0,0 +1,59 @@
+@extends('layouts.evaluationReminder')
+@section('content')
+    
+    <div class="mt-8 text-2xl">
+    Reminder Form 
+    <a href="/evaluationReminder"><button class="button4" >Back</button></a>
+    </div>
+    
+    <div class="mt-6 text-gray-500">
+    <div>
+
+  <div class="mt-1 relative rounded-md shadow-sm">
+  @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+&nbsp
+  <form action="/reminderForm" method="POST">
+  @csrf
+    <label for="reminderID" class="block text-sm font-medium text-gray-700">Reminder ID</label>
+    <input type="text" name="reminderID" id=" reminderID " class=" block w-full border-gray-300 rounded-md" style="height:40px;" placeholder="E0001">&nbsp
+
+    <label for="staffID" class="block text-sm font-medium text-gray-700">Staff ID</label>
+    <input type="text" name=" staffID " id=" staffID" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="L0001">&nbsp
+
+    <label for="evaluationPhase" class="block text-sm font-medium text-gray-700">Evaluation Phase</label>
+    <input type="text" name=" evaluationPhase " id=" evaluationPhase " class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="S0001">&nbsp
+
+    <label for="staffPosition" class="block text-sm font-medium text-gray-700">Staff Position</label>
+    <input type="text" name=" staffPosition " id=" staffPosition " class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="supervisor">&nbsp
+
+    <label for="reminderDate" class="block text-sm font-medium text-gray-700">Reminder Date</label>
+    <input type="text" name=" reminderDate " id=" reminderDate " class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" style="height:40px;"placeholder="05/03/2022">&nbsp
+
+    <label for="reminderTime" class="block text-sm font-medium text-gray-700">Reminder Time</label>
+    <input type="date" name=" reminderTime " id=" reminderTime " class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"style="height:40px;">&nbsp
+
+    <input class="button" type="submit" value ="Save"style="height:47px;">
+  </form>
+<br>
+
+  </div>
+</div>
+    </div>
+    &nbsp&nbsp&nbsp
+    @endsection
