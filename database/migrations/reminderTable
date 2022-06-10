@@ -22,7 +22,7 @@
                $table->Time('reminderTime');
            });
    
-           DB::table('staffID')->insert ([
+           DB::table('reminderID')->insert ([
                ['reminderID'=>'S1002','staffID'=>'AA111','evaluationPhase'=>'1','staffPosition'=>'supervisor','reminderDate'=>'3/3/2022','reminderTime'=>'1200']
            ]);
        }
