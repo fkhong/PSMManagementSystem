@@ -12,7 +12,7 @@ class ReminderController extends Controller
     {
         $role = Auth::user()->role;
         if ($role =='0') {
-            return view('errorAccessStudent');
+            return view('errorAccessStaff');
         }else {
             
             return view('manageEvaluationReminder/evaluationReminderHome');
