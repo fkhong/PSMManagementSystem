@@ -1,0 +1,39 @@
++@extends('layouts.evaluationReminder')
+@section('content')
+   
+    <div class="mt-8 text-2xl">
+    Reminder Edit 
+   
+    </div>
+    <br>
+    
+    <div class="mt-6 text-gray-500">
+    
+    </div>  
+    
+    @php
+        echo '<form action="/reminderEdit" method="POST" onsubmit="return confirm(\'Edit Reminder?\');">';
+    @endphp
+    @csrf
+    <label for="reminderID" class="block text-sm font-medium text-gray-700">Reminder ID</label>
+    <input type="text" name="reminderID" id="reminderID" class="block w-full border-gray-300 rounded-md" style="height:40px;" value="{{ $items->reminderID }}" readonly> &nbsp
+
+    <label for="staffID" class="block text-sm font-medium text-gray-700">Staff ID</label>
+    <input type="text" name="staffID" id="staffID" class="block w-full border-gray-300 rounded-md" style="height:40px;" value="{{ $items->staffID }}" readonly> &nbsp
+
+    <label for="evaluationPhase" class="block text-sm font-medium text-gray-700">Student ID</label>
+    <input type="text" name="evaluationPhase" id="evaluationPhase" class="block w-full border-gray-300 rounded-md" style="height:40px;" value="{{ $items->evaluationPhase }}" readonly> &nbsp
+    
+    <label for="staffPosition" class="block text-sm font-medium text-gray-700">Student Name</label>
+    <input type="text" name=" staffPosition " id=" staffPosition " class="block w-full  border-gray-300 rounded-md" style="height:40px;"value="{{ $items-> staffPosition}}" readonly>&nbsp
+    
+    <label for="reminderDate" class="block text-sm font-medium text-gray-700">Reminder Date</label>
+    <input type="date" name="reminderDate" id="reminderDate" class="block w-full  border-gray-300 rounded-md"style="height:40px;" placeholder="{{ $items->reminderDate }}">&nbsp
+
+    <label for="reminderTime" class="block text-sm font-medium text-gray-700">Reminder Time</label>
+    <input type="number" step="0.01" min="0.00" name=" reminderTime " id=" reminderTime " class="block w-full  border-gray-300 rounded-md" style="height:40px;"placeholder="{{ $items-> reminderTime }}">&nbsp
+    
+    <button class="button" type="save" style="height:47px;">Edit</button>
+</form>
+    
+@endsection
