@@ -34,7 +34,7 @@
         */
        public function down()
        {
-           Schema::dropIfExists('students');
+           Schema::dropIfExists('reminderForm');
        }
    };
    
