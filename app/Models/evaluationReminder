@@ -10,7 +10,7 @@ class evaluationReminder extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'manage_reminders';
+    protected $table = 'evaluationReminder';
     
 
 }
